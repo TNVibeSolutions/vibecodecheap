@@ -170,7 +170,7 @@ Hoạt động mượt mà với:
 
 ## 📞 Hỗ Trợ
 
-- 📧 Email: support@vibecodecheap.com
+- 📧 Email: vibecodecheap@gmail.com
 - 🌐 Website: [vibecodecheap.com](https://vibecodecheap.com/vi)
 - 💬 Discord: [Tham gia cộng đồng](https://discord.gg/vibecodecheap)
 

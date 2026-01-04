@@ -170,7 +170,7 @@ Works seamlessly with:
 
 ## 📞 Support
 
-- 📧 Email: support@vibecodecheap.com
+- 📧 Email: vibecodecheap@gmail.com
 - 🌐 Website: [vibecodecheap.com](https://vibecodecheap.com)
 - 💬 Discord: [Join our community](https://discord.gg/vibecodecheap)
 

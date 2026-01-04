@@ -116,6 +116,6 @@ console.log(response.choices[0].message.content);
 
 ## Need Help?
 
-- 📧 Email: support@vibecodecheap.com
+- 📧 Email: vibecodecheap@gmail.com
 - 💬 Discord: [Join our community](https://discord.gg/vibecodecheap)
 - 📖 [Full API Reference](api-reference.md)

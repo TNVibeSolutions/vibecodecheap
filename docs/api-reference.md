@@ -231,5 +231,5 @@ curl https://api.vibecodecheap.com/v1/ai/chat/completions \
 
 ## Support
 
-- 📧 Email: support@vibecodecheap.com
+- 📧 Email: vibecodecheap@gmail.com
 - 💬 Discord: [Join our community](https://discord.gg/vibecodecheap)
