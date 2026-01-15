@@ -100,11 +100,11 @@ curl https://api.vibecodecheap.com/v1/ai/v1/chat/completions \
 
 | Model | ID | Mô tả |
 |-------|-----|-------|
-| **Claude Opus 4.5 Thinking** | `claude-opus-4-5-thinking` | Thông minh nhất cho suy luận phức tạp với extended thinking |
-| **Claude Sonnet 4.5 Thinking** | `claude-sonnet-4-5-thinking` | Cân bằng tốt nhất với extended thinking |
-| **Claude Sonnet 4.5** | `claude-sonnet-4-5` | Cân bằng tốt nhất giữa trí tuệ và tốc độ |
-| **Gemini 3 Pro** | `gemini-3-pro` | Đa phương thức mạnh mẽ với context khổng lồ |
-| **Gemini 3 Flash** | `gemini-3-flash` | Nhanh và hiệu quả cho tác vụ nhanh |
+| **Claude Opus 4.5** | `claude-opus-4-5-20251101` | Thông minh nhất cho suy luận phức tạp với extended thinking |
+| **Claude Sonnet 4.5** | `claude-sonnet-4-5-20250929` | Cân bằng tốt nhất với extended thinking |
+| **Claude Haiku 4.5** | `claude-haiku-4-5-20251001` | Nhanh và tiết kiệm cho tác vụ đơn giản |
+| **Gemini 3 Pro** | `gemini-3-pro` | Đa phương thức mạnh mẽ với 1M context |
+| **Gemini 3 Flash** | `gemini-3-flash` | Nhanh và hiệu quả với 1M context |
 
 ### Model Miễn Phí (Không giới hạn) 🆓
 

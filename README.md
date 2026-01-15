@@ -100,11 +100,11 @@ curl https://api.vibecodecheap.com/v1/ai/v1/chat/completions \
 
 | Model | ID | Description |
 |-------|-----|-------------|
-| **Claude Opus 4.5 Thinking** | `claude-opus-4-5-thinking` | Most intelligent for complex reasoning with extended thinking |
-| **Claude Sonnet 4.5 Thinking** | `claude-sonnet-4-5-thinking` | Best balance with extended thinking capability |
-| **Claude Sonnet 4.5** | `claude-sonnet-4-5` | Best balance of intelligence and speed |
-| **Gemini 3 Pro** | `gemini-3-pro` | Multimodal powerhouse with massive context |
-| **Gemini 3 Flash** | `gemini-3-flash` | Fast and efficient for quick tasks |
+| **Claude Opus 4.5** | `claude-opus-4-5-20251101` | Most intelligent for complex reasoning with extended thinking |
+| **Claude Sonnet 4.5** | `claude-sonnet-4-5-20250929` | Best balance with extended thinking capability |
+| **Claude Haiku 4.5** | `claude-haiku-4-5-20251001` | Fast and cost-effective for simple tasks |
+| **Gemini 3 Pro** | `gemini-3-pro` | Multimodal powerhouse with 1M context |
+| **Gemini 3 Flash** | `gemini-3-flash` | Fast and efficient with 1M context |
 
 ### Free Models (Unlimited) 🆓
 
