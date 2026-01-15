@@ -7,17 +7,13 @@ from openai import OpenAI
 
 # Initialize client
 client = OpenAI(
-    base_url="https://api.vibecodecheap.com/v1/ai",
-    api_key="your_api_key"  # Replace with your actual API key
+    base_url="https://api.vibecodecheap.com/v1/ai/v1",
+    api_key="your_api_key",  # Replace with your actual API key
 )
 
 # Streaming chat completion
 stream = client.chat.completions.create(
-    model="claude-sonnet-4-5",
-    messages=[
-        {"role": "user", "content": "Explain how async/await works in Python."}
-    ],
-    stream=True
+    model="claude-sonnet-4-5", messages=[{"role": "user", "content": "Explain how async/await works in Python."}], stream=True
 )
 
 # Print streamed response

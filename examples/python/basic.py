@@ -7,7 +7,7 @@ from openai import OpenAI
 
 # Initialize client
 client = OpenAI(
-    base_url="https://api.vibecodecheap.com/v1/ai",
+    base_url="https://api.vibecodecheap.com/v1/ai/v1",
     api_key="your_api_key"  # Replace with your actual API key
 )
 

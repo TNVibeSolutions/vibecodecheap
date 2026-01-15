@@ -7,10 +7,12 @@
 
 ### Một API, Tất Cả LLM Hàng Đầu
 
-**API LLM Cao Cấp - Giảm Đến 70% — Hoàn hảo cho Claude Code và tất cả AI coding agents**
+**API LLM Cao Cấp - Giảm Đến 80% — Hoàn hảo cho Claude Code và tất cả AI coding agents**
 
 [![Website](https://img.shields.io/badge/Website-vibecodecheap.com-blue?style=for-the-badge)](https://vibecodecheap.com/vi)
-[![Discord](https://img.shields.io/badge/Discord-Tham%20Gia-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/vibecodecheap)
+[![Discord](https://img.shields.io/badge/Discord-Tham%20Gia-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/wUJ4ddwk35)
+[![Facebook](https://img.shields.io/badge/Facebook-VibeCodeCheap-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/vibecodecheapvn.cc)
+[![GitHub](https://img.shields.io/badge/GitHub-vibecodecheap-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vibecodecheap/vibecodecheap)
 
 </div>
 
@@ -18,13 +20,13 @@
 
 ## ✨ Tại sao chọn VibeCodeCheap?
 
-✅ **Giá rẻ** — Model cao cấp, giá phải chăng  
+✅ **Giá rẻ** — Model cao cấp, giảm đến 80%  
 ✅ **Tương thích** — 100% tương thích OpenAI & Anthropic API  
 ✅ **Ổn định** — SLA uptime 99.9%  
 ✅ **Nhanh** — Độ trễ thấp, streaming mượt mà  
 ✅ **Bảo mật** — Không log, không lưu dữ liệu  
 
-> 💡 **Chỉ cần đổi base URL** — Hoạt động với Claude Code, Cursor, Windsurf, và bất kỳ công cụ tương thích OpenAI!
+> 💡 **Chỉ cần đổi base URL** — Hoạt động với Claude Code, Cursor, Windsurf, Amp, và bất kỳ công cụ tương thích OpenAI!
 
 ---
 
@@ -40,7 +42,7 @@ export ANTHROPIC_API_KEY=your_api_key
 ### Sử dụng với OpenAI SDK
 
 ```bash
-export OPENAI_BASE_URL=https://api.vibecodecheap.com/v1/ai
+export OPENAI_BASE_URL=https://api.vibecodecheap.com/v1/ai/v1
 export OPENAI_API_KEY=your_api_key
 ```
 
@@ -50,7 +52,7 @@ export OPENAI_API_KEY=your_api_key
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.vibecodecheap.com/v1/ai",
+    base_url="https://api.vibecodecheap.com/v1/ai/v1",
     api_key="your_api_key"
 )
 
@@ -67,7 +69,7 @@ print(response.choices[0].message.content)
 import OpenAI from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://api.vibecodecheap.com/v1/ai',
+  baseURL: 'https://api.vibecodecheap.com/v1/ai/v1',
   apiKey: 'your_api_key',
 });
 
@@ -81,7 +83,7 @@ console.log(response.choices[0].message.content);
 ### Ví dụ cURL
 
 ```bash
-curl https://api.vibecodecheap.com/v1/ai/chat/completions \
+curl https://api.vibecodecheap.com/v1/ai/v1/chat/completions \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -116,24 +118,59 @@ curl https://api.vibecodecheap.com/v1/ai/chat/completions \
 
 ## 💳 Bảng Giá
 
-### 💎 Pro — 169.000đ/tháng ($7.99)
+### Gói Subscription
+
+| Gói | Giá | Phù hợp với |
+|-----|-----|-------------|
+| 💎 **Claude Pro** | $7.99/tháng | Developer cá nhân |
+| 🚀 **Claude Max 5x** | $29.99/tháng | Power users & teams |
+| ⭐ **Claude Max 20x** | $49.99/tháng | Developer chuyên nghiệp |
+
+#### 💎 Claude Pro — $7.99/tháng (169.000đ)
 
 > **Nhiều hơn gói Claude Pro ($20)** • Gấp 10 lần Cursor Pro
 
 - ✅ Tất cả model cao cấp (Claude Opus 4.5, Sonnet 4.5, Gemini 3 Pro...)
 - ✅ Miễn phí không giới hạn (GLM 4.7, GPT 5 Mini)
-- ✅ Cập nhật model flagship
 - ✅ Rate limit tiêu chuẩn
 
-### 🚀 Max — 999.000đ/tháng ($49.99)
+#### 🚀 Claude Max 5x — $29.99/tháng (599.000đ) *(Phổ biến nhất)*
+
+> **Nhiều hơn Claude Max 5x ($100)** • Gấp 5 lần gói Pro
+
+- ✅ Tất cả quyền lợi gói Pro
+- ✅ Rate limit cao hơn
+- ✅ Hỗ trợ ưu tiên
+
+#### ⭐ Claude Max 20x — $49.99/tháng (999.000đ) *(Giá trị nhất)*
 
 > **Nhiều hơn Claude Max 20x ($200)** • Gấp 10 lần Cursor Max
 
-- ✅ Tất cả model cao cấp
-- ✅ Miễn phí không giới hạn
-- ✅ Rate limit cao hơn
-- ✅ Hỗ trợ ưu tiên
+- ✅ Tất cả quyền lợi gói Pro
+- ✅ Rate limit cao nhất
+- ✅ Hỗ trợ ưu tiên 24/7
 - ✅ Truy cập sớm tính năng mới
+
+---
+
+### 💰 Trả Theo Sử Dụng (Pay-as-You-Go)
+
+Không muốn subscription? Nạp tiền và dùng credit!
+
+| Tính năng | Lợi ích |
+|-----------|---------|
+| 🎁 **$3 Chào mừng** | Nhận $3 credit miễn phí khi đăng ký |
+| 💵 **5x Credit Bonus** | Nạp $1 nhận $5 credit |
+| 📊 **Giá minh bạch** | Chỉ trả cho những gì bạn dùng |
+| ⚡ **Không ràng buộc** | Không phí hàng tháng |
+
+#### Giá Token (Giảm 80%)
+
+| Model | Input | Output |
+|-------|-------|--------|
+| Claude Opus 4.5 | $1.00/M | $5.00/M |
+| Claude Sonnet 4.5 | $0.60/M | $3.00/M |
+| Gemini 3 Pro | $0.40/M | $2.40/M |
 
 [![Xem Chi Tiết Bảng Giá](https://img.shields.io/badge/Xem%20Chi%20Tiết-vibecodecheap.com-green?style=for-the-badge)](https://vibecodecheap.com/vi/#pricing)
 
@@ -148,6 +185,7 @@ Hoạt động mượt mà với:
 | **Claude Code** | Đặt `ANTHROPIC_BASE_URL` |
 | **Cursor** | Cài đặt tương thích OpenAI |
 | **Windsurf** | Cài đặt tương thích OpenAI |
+| **Amp** | Đặt `ANTHROPIC_BASE_URL` |
 | **Aider** | Đặt `OPENAI_API_BASE` |
 | **Continue.dev** | Config custom provider |
 | **Bất kỳ OpenAI SDK** | Chỉ cần đổi `base_url` |
@@ -170,9 +208,11 @@ Hoạt động mượt mà với:
 
 ## 📞 Hỗ Trợ
 
-- 📧 Email: vibecodecheap@gmail.com
+- 📧 Email: support@vibecodecheap.com
 - 🌐 Website: [vibecodecheap.com](https://vibecodecheap.com/vi)
-- 💬 Discord: [Tham gia cộng đồng](https://discord.gg/vibecodecheap)
+- 💬 Discord: [Tham gia cộng đồng](https://discord.gg/wUJ4ddwk35)
+- 📘 Facebook: [VibeCodeCheap VN](https://www.facebook.com/vibecodecheapvn.cc)
+- 🐙 GitHub: [vibecodecheap/vibecodecheap](https://github.com/vibecodecheap/vibecodecheap)
 
 ---
 

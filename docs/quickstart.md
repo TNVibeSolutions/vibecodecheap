@@ -6,9 +6,20 @@ Get started with VibeCodeCheap in minutes.
 
 1. Go to [vibecodecheap.com](https://vibecodecheap.com)
 2. Sign up with your email or Google account
-3. Choose a plan (Pro or Max)
+3. Get $3 free welcome credit instantly!
 
-## 2. Get Your API Key
+## 2. Choose Your Plan
+
+### Subscription Plans
+- **Claude Pro** ($7.99/mo) — For individual developers
+- **Claude Max 5x** ($29.99/mo) — For power users & teams
+- **Claude Max 20x** ($49.99/mo) — For professional developers
+
+### Pay-as-You-Go
+- Top up $1, get $5 credit (5x bonus!)
+- No monthly commitment
+
+## 3. Get Your API Key
 
 1. Navigate to [Dashboard → API Keys](https://vibecodecheap.com/dashboard/api-keys)
 2. Click "Create New Key"
@@ -16,9 +27,16 @@ Get started with VibeCodeCheap in minutes.
 
 > ⚠️ **Important:** Your API key will only be shown once. Store it safely!
 
-## 3. Configure Your Tool
+## 4. Configure Your Tool
 
 ### Claude Code
+
+```bash
+export ANTHROPIC_BASE_URL=https://api.vibecodecheap.com/v1/ai
+export ANTHROPIC_API_KEY=your_api_key
+```
+
+### Amp
 
 ```bash
 export ANTHROPIC_BASE_URL=https://api.vibecodecheap.com/v1/ai
@@ -29,20 +47,20 @@ export ANTHROPIC_API_KEY=your_api_key
 
 1. Open Cursor Settings
 2. Go to Models → OpenAI API
-3. Set Base URL: `https://api.vibecodecheap.com/v1/ai`
+3. Set Base URL: `https://api.vibecodecheap.com/v1/ai/v1`
 4. Set API Key: `your_api_key`
 
 ### Windsurf
 
 1. Open Settings
 2. Navigate to AI Provider
-3. Set Base URL: `https://api.vibecodecheap.com/v1/ai`
+3. Set Base URL: `https://api.vibecodecheap.com/v1/ai/v1`
 4. Set API Key: `your_api_key`
 
 ### Aider
 
 ```bash
-export OPENAI_API_BASE=https://api.vibecodecheap.com/v1/ai
+export OPENAI_API_BASE=https://api.vibecodecheap.com/v1/ai/v1
 export OPENAI_API_KEY=your_api_key
 
 aider --model claude-sonnet-4-5
@@ -59,14 +77,14 @@ Add to your `config.json`:
       "title": "Claude Sonnet 4.5",
       "provider": "openai",
       "model": "claude-sonnet-4-5",
-      "apiBase": "https://api.vibecodecheap.com/v1/ai",
+      "apiBase": "https://api.vibecodecheap.com/v1/ai/v1",
       "apiKey": "your_api_key"
     }
   ]
 }
 ```
 
-## 4. Start Using
+## 5. Start Using
 
 ### Python
 
@@ -74,7 +92,7 @@ Add to your `config.json`:
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.vibecodecheap.com/v1/ai",
+    base_url="https://api.vibecodecheap.com/v1/ai/v1",
     api_key="your_api_key"
 )
 
@@ -91,7 +109,7 @@ print(response.choices[0].message.content)
 import OpenAI from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://api.vibecodecheap.com/v1/ai',
+  baseURL: 'https://api.vibecodecheap.com/v1/ai/v1',
   apiKey: 'your_api_key',
 });
 
@@ -116,6 +134,7 @@ console.log(response.choices[0].message.content);
 
 ## Need Help?
 
-- 📧 Email: vibecodecheap@gmail.com
-- 💬 Discord: [Join our community](https://discord.gg/vibecodecheap)
+- 📧 Email: support@vibecodecheap.com
+- 💬 Discord: [Join our community](https://discord.gg/wUJ4ddwk35)
+- 🐙 GitHub: [vibecodecheap/vibecodecheap](https://github.com/vibecodecheap/vibecodecheap)
 - 📖 [Full API Reference](api-reference.md)

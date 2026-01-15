@@ -2,11 +2,12 @@
 
 VibeCodeCheap provides a unified API that is 100% compatible with OpenAI and Anthropic APIs.
 
-## Base URL
+## Base URLs
 
-```
-https://api.vibecodecheap.com/v1/ai
-```
+| API Type | Base URL |
+|----------|----------|
+| **Anthropic API** | `https://api.vibecodecheap.com/v1/ai` |
+| **OpenAI API** | `https://api.vibecodecheap.com/v1/ai/v1` |
 
 ## Authentication
 
@@ -16,13 +17,20 @@ All API requests require an API key in the `Authorization` header:
 Authorization: Bearer your_api_key
 ```
 
-## Endpoints
+For Anthropic API, you can also use:
+```
+x-api-key: your_api_key
+```
+
+---
+
+## OpenAI API Format
 
 ### Chat Completions
 
 Create a chat completion.
 
-**Endpoint:** `POST /chat/completions`
+**Endpoint:** `POST https://api.vibecodecheap.com/v1/ai/v1/chat/completions`
 
 **Request:**
 
@@ -77,16 +85,85 @@ Create a chat completion.
 }
 ```
 
-### Streaming
+---
 
-Enable streaming by setting `stream: true`:
+## Anthropic API Format
+
+### Messages
+
+Create a message.
+
+**Endpoint:** `POST https://api.vibecodecheap.com/v1/ai/messages`
+
+**Request:**
+
+```json
+{
+  "model": "claude-sonnet-4-5",
+  "max_tokens": 1024,
+  "messages": [
+    {"role": "user", "content": "Hello!"}
+  ]
+}
+```
+
+**Headers:**
+
+```
+x-api-key: your_api_key
+anthropic-version: 2023-06-01
+Content-Type: application/json
+```
+
+**Response:**
+
+```json
+{
+  "id": "msg_xxx",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "text",
+      "text": "Hello! How can I help you today?"
+    }
+  ],
+  "model": "claude-sonnet-4-5",
+  "stop_reason": "end_turn",
+  "usage": {
+    "input_tokens": 10,
+    "output_tokens": 12
+  }
+}
+```
+
+---
+
+## Streaming
+
+### OpenAI Format
 
 ```bash
-curl https://api.vibecodecheap.com/v1/ai/chat/completions \
+curl https://api.vibecodecheap.com/v1/ai/v1/chat/completions \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
     "model": "claude-sonnet-4-5",
+    "messages": [{"role": "user", "content": "Hello!"}],
+    "stream": true
+  }'
+```
+
+### Anthropic Format
+
+```bash
+curl https://api.vibecodecheap.com/v1/ai/messages \
+  -H "x-api-key: your_api_key" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-sonnet-4-5",
+    "max_tokens": 1024,
     "messages": [{"role": "user", "content": "Hello!"}],
     "stream": true
   }'
@@ -151,7 +228,8 @@ Rate limits depend on your plan:
 | Plan | Requests/min | Tokens/min |
 |------|--------------|------------|
 | Pro | 60 | 100,000 |
-| Max | 120 | 500,000 |
+| Max 5x | 90 | 250,000 |
+| Max 20x | 120 | 500,000 |
 
 When rate limited, you'll receive a `429` response with a `Retry-After` header.
 
@@ -159,32 +237,57 @@ When rate limited, you'll receive a `429` response with a `Retry-After` header.
 
 ## SDK Examples
 
+### Python (Anthropic SDK) - Recommended
+
+```python
+import anthropic
+
+client = anthropic.Anthropic(
+    base_url="https://api.vibecodecheap.com/v1/ai",
+    api_key="your_api_key"
+)
+
+message = client.messages.create(
+    model="claude-sonnet-4-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+print(message.content[0].text)
+```
+
 ### Python (OpenAI SDK)
 
 ```python
 from openai import OpenAI
 
 client = OpenAI(
-    base_url="https://api.vibecodecheap.com/v1/ai",
+    base_url="https://api.vibecodecheap.com/v1/ai/v1",
     api_key="your_api_key"
 )
 
-# Non-streaming
 response = client.chat.completions.create(
     model="claude-sonnet-4-5",
     messages=[{"role": "user", "content": "Hello!"}]
 )
 print(response.choices[0].message.content)
+```
 
-# Streaming
-stream = client.chat.completions.create(
-    model="claude-sonnet-4-5",
-    messages=[{"role": "user", "content": "Hello!"}],
-    stream=True
-)
-for chunk in stream:
-    if chunk.choices[0].delta.content:
-        print(chunk.choices[0].delta.content, end="")
+### Node.js (Anthropic SDK) - Recommended
+
+```javascript
+import Anthropic from '@anthropic-ai/sdk';
+
+const client = new Anthropic({
+  baseURL: 'https://api.vibecodecheap.com/v1/ai',
+  apiKey: 'your_api_key',
+});
+
+const message = await client.messages.create({
+  model: 'claude-sonnet-4-5',
+  max_tokens: 1024,
+  messages: [{ role: 'user', content: 'Hello!' }],
+});
+console.log(message.content[0].text);
 ```
 
 ### Node.js (OpenAI SDK)
@@ -193,32 +296,21 @@ for chunk in stream:
 import OpenAI from 'openai';
 
 const client = new OpenAI({
-  baseURL: 'https://api.vibecodecheap.com/v1/ai',
+  baseURL: 'https://api.vibecodecheap.com/v1/ai/v1',
   apiKey: 'your_api_key',
 });
 
-// Non-streaming
 const response = await client.chat.completions.create({
   model: 'claude-sonnet-4-5',
   messages: [{ role: 'user', content: 'Hello!' }],
 });
 console.log(response.choices[0].message.content);
-
-// Streaming
-const stream = await client.chat.completions.create({
-  model: 'claude-sonnet-4-5',
-  messages: [{ role: 'user', content: 'Hello!' }],
-  stream: true,
-});
-for await (const chunk of stream) {
-  process.stdout.write(chunk.choices[0]?.delta?.content || '');
-}
 ```
 
-### cURL
+### cURL (OpenAI Format)
 
 ```bash
-curl https://api.vibecodecheap.com/v1/ai/chat/completions \
+curl https://api.vibecodecheap.com/v1/ai/v1/chat/completions \
   -H "Authorization: Bearer your_api_key" \
   -H "Content-Type: application/json" \
   -d '{
@@ -227,9 +319,24 @@ curl https://api.vibecodecheap.com/v1/ai/chat/completions \
   }'
 ```
 
+### cURL (Anthropic Format)
+
+```bash
+curl https://api.vibecodecheap.com/v1/ai/messages \
+  -H "x-api-key: your_api_key" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "claude-sonnet-4-5",
+    "max_tokens": 1024,
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+```
+
 ---
 
 ## Support
 
-- 📧 Email: vibecodecheap@gmail.com
-- 💬 Discord: [Join our community](https://discord.gg/vibecodecheap)
+- 📧 Email: support@vibecodecheap.com
+- 💬 Discord: [Join our community](https://discord.gg/wUJ4ddwk35)
+- 🐙 GitHub: [vibecodecheap/vibecodecheap](https://github.com/vibecodecheap/vibecodecheap)

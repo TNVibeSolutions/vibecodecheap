@@ -7,7 +7,7 @@ import OpenAI from 'openai';
 
 // Initialize client
 const client = new OpenAI({
-  baseURL: 'https://api.vibecodecheap.com/v1/ai',
+  baseURL: 'https://api.vibecodecheap.com/v1/ai/v1',
   apiKey: 'your_api_key', // Replace with your actual API key
 });
 
